@@ -1,0 +1,8 @@
+Django==1.8
+django-tables2==0.15.0
+django-wkhtmltopdf==2.0.2
+Pillow==2.8.1
+psycopg2==2.6
+six==1.9.0
+Unipath==1.1
+

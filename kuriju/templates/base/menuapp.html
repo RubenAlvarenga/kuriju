@@ -1,0 +1,52 @@
+<aside><div class="well bs-sidebar affix" id="sidebar">
+<div class="nav nav-pills nav-stacked ">
+    <div class="panel-group" id="accordion">
+        {% for item in menu %}
+        <div class="panel panel-default">                
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="list-group-item" data-toggle="collapse" data-parent="#accordion" href="#{{item.url}}">
+                        <span class="{{item.class}}"></span> {{item.name}}
+                    </a>
+                </h4>
+            </div>
+            <div id="{{item.url}}" class="panel-collapse collapse {{item.active}}">
+                <div class="panel-body">
+                    <ul class="menuinterno">
+                        {% for subitem1 in item.submenu %}                        
+                            <li><a class="list-group-item" href="{{subitem1.url}}" {% if subitem1.active %}style="color:#FFFFFF; font-weight: bold"{% endif %}><!--#{% if subitem1.active %}&raquo;{% endif %}#-->{{subitem1.name}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div></aside>
+
+
+<!--
+
+            <div id="{{item.url}}" class="panel-collapse collapse {{item.active}}">
+                <div class="panel-body">
+                    <ul class="navbar menuinterno">
+                        {% for subitem1 in item.submenu %}                        
+                            <li class="dropdown"><a class="list-group-item dropdown-toggle"  data-toggle="dropdown" href="{{subitem1.url}}" {% if subitem1.active %}style="color:#FFFFFF; font-weight: bold"{% endif %} >{{subitem1.name}}<span class="caret right"></span></a>
+                            {% if subitem1.acciones %}
+                                
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Usuarios</a></li>
+                                    </ul>
+                                </li>
+
+
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+-->

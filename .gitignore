@@ -1,0 +1,4 @@
+kuriju/media/*
+kuriju/apps/*/migrations/
+*.pyc
+*.jpg

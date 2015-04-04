@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+{% load render_table from django_tables2 %}
+{% load verbose_name_tags %}
+{% block title %}{{ object_list|queryset_verbose_name_plural|capfirst }}{% endblock title %}
+
+
+{% block content %}
+    {% include "base/cabeceraLista.html" %}
+    {% if object_list %}
+        {% render_table table "base/mytable.html" %}
+        </form><!--IMPORTANTE FORM DE LAS ACCIONES-->
+    {% endif %}
+
+{% endblock content %}
